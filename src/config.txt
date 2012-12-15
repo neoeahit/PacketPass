@@ -1,0 +1,6 @@
+groupA
+addr1;addr2;addr3
+groupC
+addr4;
+groupB
+addr5;

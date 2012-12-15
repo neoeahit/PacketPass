@@ -1,0 +1,96 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Packetpass Firewall Manager</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <style>
+	    #draggable { width: 30px; height: 50px; padding: 0.5em; float: left; margin: 30px 30px 30px 0; }
+	    #draggable2 { width: 30px; height: 50px; padding: 0.5em; float: left; margin: 30px 30px 30px 0; }
+	    #draggable3 { width: 30px; height: 50px; padding: 0.5em; float: left; margin: 30px 30px 30px 0; }
+	    #droppable { width: 200px; height: 200px; padding: 0.5em; float: left; margin: 50px; }
+	    #droppable2 { width: 200px; height: 200px; padding: 0.5em; float: left; margin: 50px; }
+	    #droppable3 { width: 200px; height: 200px; padding: 0.5em; float: left; margin: 50px; }
+	</style>
+    <script>
+    
+    var hidden = null;
+    
+    $(function() {
+        $( "#draggable" ).draggable();
+        $( "#draggable2" ).draggable();
+        $( "#draggable3" ).draggable();
+        
+        $( "#droppable" ).droppable({
+            drop: function( event, ui ) {
+            	
+                placement("Zone 1");
+            }
+        });
+        
+        $( "#droppable2" ).droppable({
+            drop: function( event, ui ) {
+               placement("Zone 2");
+            }
+        });
+        
+        $( "#droppable3" ).droppable({
+            drop: function( event, ui ) {
+                placement("Zone 3");
+            }
+        });
+    });
+    
+    function placement(zone)
+    {
+    	alert(hidden + " moved to " + zone);
+    	loadSQS(hidden, zone);
+    }
+    
+    function setHidden(hiddenvalue)
+    {
+    	hidden = hiddenvalue;
+    	return true;
+    }
+    
+    function loadSQS(vm, zone)
+    { 
+    	  document.location.href = "Qsevlet?vm="+vm+"&zone="+zone"; 
+    } 
+    </script>
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content" onMouseDown="setHidden('VM1');">
+    <p>VM1</p>
+</div>
+
+<div id="draggable2" class="ui-widget-content" onMouseDown="setHidden('VM2');">
+    <p>VM2</p>
+</div>
+
+<div id="draggable3" class="ui-widget-content" onMouseDown="setHidden('VM3');">
+    <p>VM3</p>
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<div id="droppable" class="ui-widget-header">
+    <p>Zone 1</p>
+</div>
+ 
+<div id="droppable2" class="ui-widget-header">
+    <p>Zone 2</p>
+</div>
+
+<div id="droppable3" class="ui-widget-header">
+    <p>Zone 3</p>
+</div>
+ 
+ 
+</body>
+</html>
