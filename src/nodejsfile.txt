@@ -1,1 +1,1 @@
-addr1 groupC
+deletegroup groupC N N N N N

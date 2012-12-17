@@ -73,13 +73,15 @@ public class bootstraptrial extends HttpServlet {
 				"\n<head>" +
 			    "\n<meta charset=\"utf-8\" />" +
 			    "\n<title>Packetpass Firewall Manager</title>" +
-			   
+			    
+				"<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js\"></script>" +
+			    
 			    "<!-- Le styles -->" +
-			    "<link href=\"assets/css/bootstrap.css\" rel=\"stylesheet\">" +
-			    "<link href=\"assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
-			    "<link href=\"assets/css/docs.css\" rel=\"stylesheet\">" +
-			    "<link href=\"assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
-				
+			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+			    //"<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
+			    //"<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
+			    //"<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
+
     			"\n</head>");
     	
     	out.println(
@@ -99,7 +101,8 @@ public class bootstraptrial extends HttpServlet {
     			"<li class=\"\">" +
     			"<a href=\"./homepage\">Home</a>" +
     			"</li>" +
-    			"</ul></div></div></div></div>" );
+    			"</ul></div></div></div></div>" +
+    			"<script type=\"text/javascript\" src=\"twitter.github.com/bootstrap/js/bootstrap.js\"></script>");
     	
     	out.println(
 

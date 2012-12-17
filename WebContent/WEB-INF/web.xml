@@ -69,4 +69,14 @@
     <servlet-name>bootstraptrial</servlet-name>
     <url-pattern>/bootstraptrial</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>VMServlet</display-name>
+    <servlet-name>VMServlet</servlet-name>
+    <servlet-class>VMServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VMServlet</servlet-name>
+    <url-pattern>/VMServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

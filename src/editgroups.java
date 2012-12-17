@@ -139,10 +139,10 @@ public class editgroups extends HttpServlet {
 				"<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">" +
 			    
 			    "<!-- Le styles -->" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
+			    "<link href=\"assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+			    "<link href=\"assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
+			    "<link href=\"assets/css/docs.css\" rel=\"stylesheet\">" +
+			    "<link href=\"assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
 				
 			    "\n<script src=\"http://code.jquery.com/jquery-1.8.2.js\"></script>" +
 			    "\n<script src=\"http://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script>" +
@@ -169,8 +169,6 @@ public class editgroups extends HttpServlet {
     			"<li class=\"\">" +
     			"<a href=\"./addgroup\">Add New Group</a>" +
     			"</li>" +
-    			"<li class=\"\">" +
-    			"<a href=\"./addvm\">Add new VM</a>" +
     			"</ul></div></div></div></div>" );
 
     	out.println(	
@@ -228,7 +226,13 @@ public class editgroups extends HttpServlet {
     	    		"<form action=\"GroupQServlet\" method=\"get\">" +
     	    			"<input type=\"hidden\" name=\"groupaction\" value=\"deletegroup\">" +
     	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    			"<br><input type=\"submit\" value=\"Delete Group\"><br><br>");
+    	    			"<br><input type=\"submit\" value=\"Delete Group\"></form><br>");
+    	    
+    	    out.println(
+    	    		"<form action=\"VMServlet\" method=\"get\">" +
+    	    			"<input type=\"hidden\" name=\"groupaction\" value=\"addvm\">" +
+    	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
+    	    			"<br><input type=\"submit\" value=\"Add new VM to group\"></form><br><br>");
     	    
     	    out.println(
     	    	"</body>" +
