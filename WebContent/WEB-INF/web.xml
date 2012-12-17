@@ -59,4 +59,14 @@
     <servlet-name>addgroup</servlet-name>
     <url-pattern>/addgroup</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>bootstraptrial</display-name>
+    <servlet-name>bootstraptrial</servlet-name>
+    <servlet-class>bootstraptrial</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bootstraptrial</servlet-name>
+    <url-pattern>/bootstraptrial</url-pattern>
+  </servlet-mapping>
 </web-app>
