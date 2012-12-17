@@ -79,7 +79,7 @@ public class Qservlet extends HttpServlet {
 			 
 			String content = vmname+" "+zone;
  
-			File file = new File("/home/vipul/Downloads/PacketPass/src/nodejsfile.txt");
+			File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/nodejsfile.txt");
  
 			// if file doesnt exists, then create it
 			if (!file.exists()) {

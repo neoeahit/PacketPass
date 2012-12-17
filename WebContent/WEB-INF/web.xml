@@ -29,4 +29,14 @@
     <servlet-name>Qservlet</servlet-name>
     <url-pattern>/Qservlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>editgroups</display-name>
+    <servlet-name>editgroups</servlet-name>
+    <servlet-class>editgroups</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>editgroups</servlet-name>
+    <url-pattern>/editgroups</url-pattern>
+  </servlet-mapping>
 </web-app>

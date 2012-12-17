@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class homepage extends HttpServlet
 {
+	String sourcepath = "/Users/abhas/Documents/workspace/PacketPass/src/";
+    
 	public class SecGroup
 	{
 		String name;
@@ -50,7 +52,7 @@ public class homepage extends HttpServlet
     	
     	ArrayList<SecGroup> grouplist = new ArrayList<SecGroup>();
     	
-    	File file = new File("/home/vipul/Downloads/PacketPass/src/config.txt");
+    	File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/config.txt");
     	Scanner scanner = new Scanner(file);
         
     	int numvms = 0;
@@ -93,6 +95,16 @@ public class homepage extends HttpServlet
 				    "\n<meta charset=\"utf-8\" />" +
 				    "\n<title>Packetpass Firewall Manager</title>" +
 				    "\n<link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css\" />" +
+					
+				    "<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">" +
+					"<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">" +
+				    
+				    "<!-- Le styles -->" +
+				    "<link href=\"assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+				    "<link href=\"assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
+				    "<link href=\"assets/css/docs.css\" rel=\"stylesheet\">" +
+				    "<link href=\"assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
+					
 				    "\n<script src=\"http://code.jquery.com/jquery-1.8.2.js\"></script>" +
 				    "\n<script src=\"http://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script>" +
 				    "\n<link rel=\"stylesheet\" href=\"/resources/demos/style.css\" />" +
@@ -150,6 +162,27 @@ public class homepage extends HttpServlet
     				"\n</head>" + 
     				"\n<body>");
     	
+    	out.println("\n<div class=\"navbar navbar-inverse navbar-fixed-top\">" +
+    			"<div class=\"navbar-inner\">" +
+    			"<div class=\"container\">" +
+    			"<button type=\"button\" class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">" +
+    			"<span class=\"icon-bar\"></span>" +
+    			"<span class=\"icon-bar\"></span>" +
+    			"<span class=\"icon-bar\"></span>" +
+    			"</button>" +
+    			"<div class=\"nav-collapse collapse\">" +
+    			"<ul class=\"nav\">" +
+    			"<li class=\"\">" +
+    			"<a href=\"./homepage\">Home</a>" +
+    			"</li>" +
+    			"<li class=\"\">" +
+    			"<a href=\"./addgroup\">Add New Group</a>" +
+    			"</li>" +
+    			"<li class=\"\">" +
+    			"<a href=\"./addvm\">Add new VM</a>" +
+    			"</ul></div></div></div></div>" );
+			
+    	
     	i =1;
     	int j=1;
     	for(SecGroup group:grouplist)
@@ -157,7 +190,7 @@ public class homepage extends HttpServlet
     		//display group
     		
     		out.println("\n<div id=\"droppable"+j+"\" class=\"ui-widget-header\">" + 
-    					"\n<p>" + group.name + "</p>" + 
+    					"\n<p><a href=\"./editgroups?groupname="+group.name+"\">" + group.name + "</p>" + 
     					"\n</div>");
     		
     		for(VM vmac:group.vmlist)
