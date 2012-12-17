@@ -1,1 +1,1 @@
-deletegroup groupA N N N N N
+modifygroup groupA Y N N Y N

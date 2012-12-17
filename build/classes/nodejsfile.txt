@@ -1,1 +1,1 @@
-addr1 groupC
+modifygroup groupA Y N N Y N

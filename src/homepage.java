@@ -170,6 +170,7 @@ public class homepage extends HttpServlet
     			"<span class=\"icon-bar\"></span>" +
     			"<span class=\"icon-bar\"></span>" +
     			"</button>" +
+    			"<a class=\"brand\" href=\"./homepage\">PacketPass</a>" +
     			"<div class=\"nav-collapse collapse\">" +
     			"<ul class=\"nav\">" +
     			"<li class=\"\">" +
@@ -178,8 +179,6 @@ public class homepage extends HttpServlet
     			"<li class=\"\">" +
     			"<a href=\"./addgroup\">Add New Group</a>" +
     			"</li>" +
-    			"<li class=\"\">" +
-    			"<a href=\"./addvm\">Add new VM</a>" +
     			"</ul></div></div></div></div>" );
 			
     	
