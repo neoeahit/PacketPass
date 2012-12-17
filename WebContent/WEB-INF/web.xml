@@ -39,4 +39,24 @@
     <servlet-name>editgroups</servlet-name>
     <url-pattern>/editgroups</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GroupQServlet</display-name>
+    <servlet-name>GroupQServlet</servlet-name>
+    <servlet-class>GroupQServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GroupQServlet</servlet-name>
+    <url-pattern>/GroupQServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addgroup</display-name>
+    <servlet-name>addgroup</servlet-name>
+    <servlet-class>addgroup</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addgroup</servlet-name>
+    <url-pattern>/addgroup</url-pattern>
+  </servlet-mapping>
 </web-app>
