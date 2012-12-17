@@ -1,1 +1,1 @@
-modifygroup newgrouprandom Y Y Y Y Y
+deletegroup groupA N N N N N

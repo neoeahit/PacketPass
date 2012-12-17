@@ -1,1 +1,1 @@
-modifygroup newgrouprandom Y Y Y Y Y
+addr1 groupC

@@ -132,11 +132,13 @@ public class editgroups extends HttpServlet {
     	"<!DOCTYPE html>" +
     	"<html>" +
     	"<body>" +
-    		"<h1>Edit Permissions for " + gr.name + "</h1><br>" +
+    		"<h1>Edit Permissions for " + gr.name + "</h1>");
+    	
+    out.println(
     		"<form action=\"GroupQServlet\" method=\"get\">");
     	if(gr.tcp=='N')
     	{
-    		out.println("<input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp<br>");
+    		out.println("<br><br><input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp<br>");
     	}
     	else
     	{
@@ -178,8 +180,16 @@ public class editgroups extends HttpServlet {
     			"<input type=\"hidden\" name=\"groupaction\" value=\"modifygroup\">" +
     			"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
     	    	"<br><input type=\"submit\" value=\"Submit\">" +
-    	    "</form>" +
-    	    "</body>" +
-    	    "</html>");
+    	    	"</form>");
+    	    
+    	    out.println(
+    	    		"<form action=\"GroupQServlet\" method=\"get\">" +
+    	    			"<input type=\"hidden\" name=\"groupaction\" value=\"deletegroup\">" +
+    	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
+    	    			"<br><input type=\"submit\" value=\"Delete Group\"><br><br>");
+    	    
+    	    out.println(
+    	    	"</body>" +
+    	    	"</html>");
 	}
 }
