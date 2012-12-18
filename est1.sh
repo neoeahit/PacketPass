@@ -43,7 +43,17 @@ if [ $https = $t ]
       iptables -A OUTPUT -p tcp --sport 443 -d  ${Array[i]} --dport 1024:65535 -m state --state ESTABLISHED -j ACCEPT
      done
 fi
+#for smtp
+if [ $smtp = $t ]
+  then
+    for ((i=5; i<${#Array[@]}; ++i));
+      do
+        iptables -A INPUT -p tcp -s ${Array[i]} --sport 1024:65535 --dport 25 -m state --state NEW,ESTABLISHED -j ACCEPT
+        iptables -A OUTPUT -p tcp --sport 25 -d ${Array[i]} --dport 1024:65535 -m state --state ESTABLISHED -j ACCEPT
+    done
+fi
 iptables -P INPUT DROP
+iptables -P OUTPUT DROP
 iptables -L -v
 service iptables save
 iptables -L -v
