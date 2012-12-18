@@ -52,6 +52,15 @@ if [ $smtp = $t ]
         iptables -A OUTPUT -p tcp --sport 25 -d ${Array[i]} --dport 1024:65535 -m state --state ESTABLISHED -j ACCEPT
     done
 fi
+##allowing for ping
+if [ $smtp = $t ]
+  then
+    for ((i=5; i<${#Array[@]}; ++i));
+      do
+        iptables -A INPUT -s ${Array[i]} -p icmp --icmp-type echo-request -j ACCEPT
+        iptables -A OUTPUT -d ${Array[i]} -p icmp --icmp-type echo-reply -j ACCEPT
+      done
+fi
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -L -v
