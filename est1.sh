@@ -64,5 +64,6 @@ fi
 iptables -P INPUT DROP
 iptables -P OUTPUT DROP
 iptables -L -v
-service iptables save
+/etc/init.d/iptables save
+/etc/init.d/iptables start
 iptables -L -v
