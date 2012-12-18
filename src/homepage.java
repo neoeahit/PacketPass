@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class homepage extends HttpServlet
 {
-	String sourcepath = "/Users/abhas/Documents/workspace/PacketPass/src/";
+	String sourcepath = "/home/vipul/Downloads/PacketPass/src";
     
 	public class SecGroup
 	{
@@ -52,7 +52,7 @@ public class homepage extends HttpServlet
     	
     	ArrayList<SecGroup> grouplist = new ArrayList<SecGroup>();
     	
-    	File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/config.txt");
+    	File file = new File("/home/vipul/Downloads/PacketPass/src/config.txt");
     	Scanner scanner = new Scanner(file);
         
     	int numvms = 0;

@@ -72,7 +72,7 @@ public class editgroups extends HttpServlet {
 		
 		gr.name = groupname;
 		
-		File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/groupsettings.txt");
+		File file = new File("/home/vipul/Downloads/PacketPass/src/groupsettings.txt");
     	Scanner scanner = new Scanner(file);
     	
     	while ( scanner.hasNextLine() )
