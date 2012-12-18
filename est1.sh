@@ -1,6 +1,5 @@
 #!/bin/bash
 
-tcp=$1
 ssh=$2
 smtp=$3
 http=$4
