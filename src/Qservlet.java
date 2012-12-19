@@ -77,9 +77,20 @@ public class Qservlet extends HttpServlet {
 		//instead we are writing it to the file and nodejs will take of it
 		try {
 			
-			String content = new String("{" + "\"task\":\"MoveInstance\",\"groupTo\":\""+targetgroup+"\",\"dns\":\""+vmname+"\""+"}");
+			String content;
 			
-			System.out.println("Content being pushed:\n"+content);
+			if(!targetgroup.equals("Trash"))
+			{
+				content = new String("{" + "\"task\":\"delete\",\"dns\":\""+vmname+"\""+"}");
+			
+				System.out.println("Content being pushed:\n"+content);
+			}
+			else
+			{
+				content = new String("{" + "\"task\":\"MoveInstance\",\"groupTo\":\""+targetgroup+"\",\"dns\":\""+vmname+"\""+"}");
+				
+				System.out.println("Content being pushed:\n"+content);
+			}
 			
 			File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/nodejsfile.txt");
  
