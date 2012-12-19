@@ -77,12 +77,8 @@ public class bootstraptrial extends HttpServlet {
 				"<script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js\"></script>" +
 			    
 			    "<!-- Le styles -->" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
-			    //"<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
-			    //"<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
-			    //"<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
-
-    			"\n</head>");
+			    "<link href=\"http://twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+			    "\n</head>");
     	
     	out.println(
     	"<body>");
@@ -102,7 +98,7 @@ public class bootstraptrial extends HttpServlet {
     			"<a href=\"./homepage\">Home</a>" +
     			"</li>" +
     			"</ul></div></div></div></div>" +
-    			"<script type=\"text/javascript\" src=\"twitter.github.com/bootstrap/js/bootstrap.js\"></script>");
+    			"<script type=\"text/javascript\" src=\"http://twitter.github.com/bootstrap/js/bootstrap.js\"></script>");
     	
     	out.println(
 

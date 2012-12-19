@@ -82,10 +82,10 @@ public class addgroup extends HttpServlet {
 				"<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">" +
 			    
 			    "<!-- Le styles -->" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
-			    "<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
+			    "<link href=\"http://twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+//			    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
+//			    "<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
+//			    "<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
 				
 			    "\n<script src=\"http://code.jquery.com/jquery-1.8.2.js\"></script>" +
 			    "\n<script src=\"http://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script>" +
@@ -93,7 +93,7 @@ public class addgroup extends HttpServlet {
     			"\n</head>");
     	
     	out.println(
-    	"<body>");
+    	"<body><br><br><br>");
     	
     	out.println("\n<div class=\"navbar navbar-inverse navbar-fixed-top\">" +
     			"<div class=\"navbar-inner\">" +
@@ -106,13 +106,10 @@ public class addgroup extends HttpServlet {
     			"<a class=\"brand\" href=\"./homepage\">PacketPass</a>" +
     			"<div class=\"nav-collapse collapse\">" +
     			"<ul class=\"nav\">" +
-    			"<li class=\"\">" +
-    			"<a href=\"./homepage\">Home</a>" +
-    			"</li>" +
     			"</ul></div></div></div></div>" );
     	
     	out.println(
-    		"<h2>Edit Permissions for new group:" + "</h2><br>" +
+    		"<tab align=center><h2>Edit Permissions for new group:" + "</h2><br>" +
     		"<form action=\"GroupQServlet\" method=\"get\">" +
     		
 			"Group Name:	<input type=\"text\" name=\"groupname\"><br><br>"

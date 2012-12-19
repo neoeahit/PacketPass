@@ -102,10 +102,10 @@ public class homepage extends HttpServlet
 					"<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">" +
 				    
 				    "<!-- Le styles -->" +
-				    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
-				    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
-				    "<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
-				    "<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
+				    "<link href=\"http://twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+//				    "<link href=\"twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
+//				    "<link href=\"twitter.github.com/bootstrap/assets/css/docs.css\" rel=\"stylesheet\">" +
+//				    "<link href=\"twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
 					
 				    "\n<script src=\"http://code.jquery.com/jquery-1.8.2.js\"></script>" +
 				    "\n<script src=\"http://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script>" +
@@ -163,7 +163,7 @@ public class homepage extends HttpServlet
     	
     	out.println("\n</script>" + 
     				"\n</head>" + 
-    				"\n<body>");
+    				"\n<body><br><br><br>");
     	
     	out.println("\n<div class=\"navbar navbar-inverse navbar-fixed-top\">" +
     			"<div class=\"navbar-inner\">" +
@@ -177,14 +177,11 @@ public class homepage extends HttpServlet
     			"<div class=\"nav-collapse collapse\">" +
     			"<ul class=\"nav\">" +
     			"<li class=\"\">" +
-    			"<a href=\"./homepage\">Home</a>" +
-    			"</li>" +
-    			"<li class=\"\">" +
     			"<a href=\"./addgroup\">Add New Group</a>" +
     			"</li>" +
-    			"<li class=\"\">" +
-    			"<a href=\"./bootstraptrial\">Bootstrap trial page</a>" +
-    			"</li>" +
+//    			"<li class=\"\">" +
+//    			"<a href=\"./bootstraptrial\">Bootstrap trial page</a>" +
+//    			"</li>" +
     			"</ul></div></div></div></div>" );
 			
     	

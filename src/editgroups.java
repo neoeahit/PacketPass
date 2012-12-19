@@ -136,22 +136,19 @@ public class editgroups extends HttpServlet {
 			    "\n<title>Packetpass Firewall Manager</title>" +
 			    "\n<link rel=\"stylesheet\" href=\"http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css\" />" +
 				
-			    "<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\" media=\"screen\">" +
-				"<link href=\"{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css\" rel=\"stylesheet\">" +
-			    
 			    "<!-- Le styles -->" +
-			    "<link href=\"assets/css/bootstrap.css\" rel=\"stylesheet\">" +
-			    "<link href=\"assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
-			    "<link href=\"assets/css/docs.css\" rel=\"stylesheet\">" +
-			    "<link href=\"assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
-				
+			    "<link href=\"http://twitter.github.com/bootstrap/assets/css/bootstrap.css\" rel=\"stylesheet\">" +
+//			    "<link href=\"assets/css/bootstrap-responsive.css\" rel=\"stylesheet\">" +
+//			    "<link href=\"assets/css/docs.css\" rel=\"stylesheet\">" +
+//			    "<link href=\"assets/js/google-code-prettify/prettify.css\" rel=\"stylesheet\">" +
+//				
 			    "\n<script src=\"http://code.jquery.com/jquery-1.8.2.js\"></script>" +
 			    "\n<script src=\"http://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script>" +
 			    "\n<link rel=\"stylesheet\" href=\"/resources/demos/style.css\" />" +
     			"\n</head>");
     	
     	out.println(
-    	"<body>");
+    	"<body><br><br><br>");
     	
     	out.println("\n<div class=\"navbar navbar-inverse navbar-fixed-top\">" +
     			"<div class=\"navbar-inner\">" +
@@ -165,75 +162,72 @@ public class editgroups extends HttpServlet {
     			"<div class=\"nav-collapse collapse\">" +
     			"<ul class=\"nav\">" +
     			"<li class=\"\">" +
-    			"<a href=\"./homepage\">Home</a>" +
-    			"</li>" +
-    			"<li class=\"\">" +
     			"<a href=\"./addgroup\">Add New Group</a>" +
     			"</li>" +
     			"</ul></div></div></div></div>" );
 
     	out.println(	
-    	"<h1>Edit Permissions for " + gr.name + "</h1>");
+    	"<tab align=center><h2>Edit Permissions for " + gr.name + "</h2>");
     	
     out.println(
-    		"<form action=\"GroupQServlet\" method=\"get\">");
+    		"<table align=center><tr><td></td><td><form action=\"GroupQServlet\" method=\"get\">");
     	if(gr.tcp=='N')
     	{
-    		out.println("<br><br><input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp<br>");
+    		out.println("<br><input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp</td><td></td></tr>");
     	}
     	else
     	{
-    		out.println("<input type=\"checkbox\" name=\"tcp\" value=\"Y\" checked>tcp<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"tcp\" value=\"Y\" checked>tcp</td><td></td></tr>");
     	}
     	if(gr.ssh=='N')
     	{
-    		out.println("<input type=\"checkbox\" name=\"ssh\" value=\"Y\">ssh<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"ssh\" value=\"Y\">ssh</td><td></td><td></td></tr>");
     	}
     	else
     	{
-    		out.println("<input type=\"checkbox\" name=\"ssh\" value=\"Y\" checked>ssh<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"ssh\" value=\"Y\" checked>ssh</td><td></td></tr>");
     	}
     	if(gr.smtp=='N')
     	{
-    		out.println("<input type=\"checkbox\" name=\"smtp\" value=\"Y\">smtp<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"smtp\" value=\"Y\">smtp</td><td></td></tr>");
     	}
     	else
     	{
-    		out.println("<input type=\"checkbox\" name=\"smtp\" value=\"Y\" checked>smtp<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"smtp\" value=\"Y\" checked>smtp</td><td></td></tr>");
     	}
     	if(gr.http=='N')
     	{
-    		out.println("<input type=\"checkbox\" name=\"http\" value=\"Y\">http<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"http\" value=\"Y\">http</td><td></td></tr>");
     	}
     	else
     	{
-    		out.println("<input type=\"checkbox\" name=\"http\" value=\"Y\" checked>http<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"http\" value=\"Y\" checked>http</td><td></td></tr>");
     	}
     	if(gr.https=='N')
     	{
-    		out.println("<input type=\"checkbox\" name=\"https\" value=\"Y\">https<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"https\" value=\"Y\">https</td><td></td></tr>");
     	}
     	else
     	{
-    		out.println("<input type=\"checkbox\" name=\"https\" value=\"Y\" checked>https<br>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"https\" value=\"Y\" checked>https</td><td></td></tr>");
     	}
     	    out.println(	
-    			"<input type=\"hidden\" name=\"groupaction\" value=\"modifygroup\">" +
+    			"<tr><td><input type=\"hidden\" name=\"groupaction\" value=\"modifygroup\">" +
     			"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    	"<br><input type=\"submit\" value=\"Submit\">" +
-    	    	"</form>");
+    	    	"<input type=\"submit\" value=\"Submit\">" +
+    	    	"</form></td>");
     	    
     	    out.println(
-    	    		"<form action=\"GroupQServlet\" method=\"get\">" +
+    	    		"<td><br><form action=\"GroupQServlet\" method=\"get\">" +
     	    			"<input type=\"hidden\" name=\"groupaction\" value=\"deletegroup\">" +
     	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    			"<br><input type=\"submit\" value=\"Delete Group\"></form><br>");
+    	    			"<input type=\"submit\" value=\"Delete Group\"></form></td>");
     	    
     	    out.println(
-    	    		"<form action=\"VMServlet\" method=\"get\">" +
+    	    		"<td><br><form action=\"VMServlet\" method=\"get\">" +
     	    			"<input type=\"hidden\" name=\"groupaction\" value=\"addvm\">" +
     	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    			"<br><input type=\"submit\" value=\"Add new VM to group\"></form><br><br>");
+    	    			"<input type=\"submit\" value=\"Add new VM to group\"></form></td></tr></table>");
     	    
     	    out.println(
     	    	"</body>" +

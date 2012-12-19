@@ -1,1 +1,1 @@
-addr1 groupC
+addvm groupA
