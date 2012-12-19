@@ -214,20 +214,20 @@ public class editgroups extends HttpServlet {
     	    out.println(	
     			"<tr><td><input type=\"hidden\" name=\"groupaction\" value=\"modifygroup\">" +
     			"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    	"<input type=\"submit\" value=\"Submit\">" +
+    	    	"<button type=\"submit\" class=\"btn btn-success\">Submit</button>" +
     	    	"</form></td>");
     	    
     	    out.println(
     	    		"<td><br><form action=\"GroupQServlet\" method=\"get\">" +
     	    			"<input type=\"hidden\" name=\"groupaction\" value=\"deletegroup\">" +
     	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    			"<input type=\"submit\" value=\"Delete Group\"></form></td>");
+    	    			"<button type=\"submit\" class=\"btn btn-danger\">Delete Group</button></form></td>");
     	    
     	    out.println(
     	    		"<td><br><form action=\"addvm\" method=\"get\">" +
     	    			"<input type=\"hidden\" name=\"groupaction\" value=\"addvm\">" +
     	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
-    	    			"<input type=\"submit\" value=\"Add new VM to group\"></form></td></tr></table>");
+    	    			"<button type=\"submit\" class=\"btn btn-info\">Add new VM to group</button></form></td></tr></table>");
     	    
     	    out.println(
     	    	"</body>" +

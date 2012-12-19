@@ -109,10 +109,10 @@ public class addgroup extends HttpServlet {
     			"</ul></div></div></div></div>" );
     	
     	out.println(
-    		"<tab align=center><h2>Edit Permissions for new group:" + "</h2><br>" +
+    		"<tab align=center><h2>New Group" + "</h2><br>" +
     		"<form action=\"GroupQServlet\" method=\"get\">" +
     		
-			"Group Name:	<input type=\"text\" name=\"groupname\"><br><br>"
+			"Group Name:	<input type=\"text\" name=\"groupname\" placeholder=\"example: AppServers\"><br><br>"
     		);
     	
     	out.println("<input type=\"checkbox\" name=\"ftp\" value=\"Y\" checked>ftp<br>");
@@ -128,7 +128,7 @@ public class addgroup extends HttpServlet {
     	out.println(	
     			"<input type=\"hidden\" name=\"groupaction\" value=\"creategroup\">" +
 
-    	    	"<br><input type=\"submit\" value=\"Submit\">" +
+    	    	"<br><button type=\"submit\" class=\"btn btn-success\">Submit</button>" +
     	    "</form>" +
     	    "</body>" +
     	    "</html>");

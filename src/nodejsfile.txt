@@ -1,1 +1,1 @@
-{"task":"AddInstance","Size":"Micro","group":"groupA"}
+{"task":"create","size":"Micro","group":"groupA"}

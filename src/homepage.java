@@ -176,9 +176,6 @@ public class homepage extends HttpServlet
     			"<a class=\"brand\" href=\"./homepage\">PacketPass</a>" +
     			"<div class=\"nav-collapse collapse\">" +
     			"<ul class=\"nav\">" +
-    			"<li class=\"\">" +
-    			"<a href=\"./addgroup\">Add New Group</a>" +
-    			"</li>" +
 //    			"<li class=\"\">" +
 //    			"<a href=\"./bootstraptrial\">Bootstrap trial page</a>" +
 //    			"</li>" +
@@ -192,7 +189,7 @@ public class homepage extends HttpServlet
     		//display group
     		
     		out.println("\n<div id=\"droppable"+j+"\" class=\"ui-widget-header\">" + 
-    					"\n<p><a href=\"./editgroups?groupname="+group.name+"\">" + group.name + "</p>" + 
+    					"\n<p><a href=\"./editgroups?groupname="+group.name+"\">" + "<button type=\"button\" class = \"btn btn-primary\">" +group.name + "</button></p>" + 
     					"\n</div>");
     		
     		for(VM vmac:group.vmlist)
@@ -208,7 +205,9 @@ public class homepage extends HttpServlet
     		j++;
     	}
     	
-    	out.println("\n</body></html>");
+    	out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"./addgroup\" class = \"btn btn-info\">Add New Group</a>" +
+    				
+    				"\n</body></html>");
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

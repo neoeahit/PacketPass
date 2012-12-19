@@ -73,7 +73,7 @@ public class VMServlet extends HttpServlet {
 				
 				try {
 					
-					String content = new String("{"+"\"task\":\""+vmaction+"\",\"Size\":\""+vmsize+"\",\"group\":\""+groupname+"\"}");
+					String content = new String("{"+"\"task\":\""+vmaction+"\",\"size\":\""+vmsize+"\",\"group\":\""+groupname+"\"}");
 					
 					System.out.println("Content being pushed:\n"+content);
 					
