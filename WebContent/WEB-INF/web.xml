@@ -89,4 +89,24 @@
     <servlet-name>addvm</servlet-name>
     <url-pattern>/addvm</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>WaitServlet</display-name>
+    <servlet-name>WaitServlet</servlet-name>
+    <servlet-class>WaitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WaitServlet</servlet-name>
+    <url-pattern>/WaitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>sleepservlet</display-name>
+    <servlet-name>sleepservlet</servlet-name>
+    <servlet-class>sleepservlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>sleepservlet</servlet-name>
+    <url-pattern>/sleepservlet</url-pattern>
+  </servlet-mapping>
 </web-app>

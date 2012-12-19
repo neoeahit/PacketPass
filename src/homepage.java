@@ -175,6 +175,8 @@ public class homepage extends HttpServlet
     				"\n</head>" + 
     				"\n<body><br><br><br>");
     	
+    	//out.println("<img src=\"http://www.gymheroapp.com/workouts/img/spinner.gif\" style=\"visibility:none;\">");
+    	
     	out.println("\n<div class=\"navbar navbar-inverse navbar-fixed-top\">" +
     			"<div class=\"navbar-inner\">" +
     			"<div class=\"container\">" +

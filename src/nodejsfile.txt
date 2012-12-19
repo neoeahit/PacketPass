@@ -1,1 +1,1 @@
-{"task":"MoveInstance","groupTo":"Trash","dns":"addr5"}
+{"task":"delete","dns":"ec2-107-20-30-52.compute-1.amazonaws.com"}

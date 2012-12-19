@@ -114,6 +114,7 @@ public class Qservlet extends HttpServlet {
 		//Thread.sleep(10000);
 		
 		//Call the homepage servlet again
+		Thread.sleep(60000);
 		response.sendRedirect("http://localhost:8080/PacketPass/homepage");
 	}
 
