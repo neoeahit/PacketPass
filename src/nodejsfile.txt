@@ -1,1 +1,1 @@
-addvm groupA
+deletegroup groupC N N N N N

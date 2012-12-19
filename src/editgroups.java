@@ -170,10 +170,10 @@ public class editgroups extends HttpServlet {
     	"<tab align=center><h2>Edit Permissions for " + gr.name + "</h2>");
     	
     out.println(
-    		"<table align=center><tr><td></td><td><form action=\"GroupQServlet\" method=\"get\">");
+    		"<table align=center><form action=\"GroupQServlet\" method=\"get\">");
     	if(gr.tcp=='N')
     	{
-    		out.println("<br><input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp</td><td></td></tr>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp</td><td></td></tr>");
     	}
     	else
     	{
