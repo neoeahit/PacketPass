@@ -62,32 +62,46 @@ public class homepage extends HttpServlet
     	while ( scanner.hasNextLine() )
         {
         	String line = scanner.nextLine();
-            if( line.toLowerCase().contains("group") )
+            
+        	SecGroup g = new SecGroup();
+        	
+        	if( line.toLowerCase().contains("group") )
             {
             	//add new group to list
-            	SecGroup g = new SecGroup();
+            	g = new SecGroup();
             	g.name = line.trim();
             	
-            	if(scanner.hasNext())
+            	if(scanner.hasNextLine())
             	{	
 	            	line = scanner.nextLine();
 	            	
-	            	//add vm's to last group
-	            	StringTokenizer stk = new StringTokenizer(line, ";");
-	            	while(stk.hasMoreTokens())
+	            	if( !line.toLowerCase().contains("group") )
 	            	{
-	            		String token = stk.nextToken().trim();
-	            		VM tempvm = new VM();
-	            		tempvm.ip = token;
-	            		tempvm.name = token;
-	            		tempvm.groupname = g.name;
-	            		g.vmlist.add(tempvm);
-	            		numvms++;
+		            	//add vm's to last group
+		            	StringTokenizer stk = new StringTokenizer(line, ";");
+		            	while(stk.hasMoreTokens())
+		            	{
+		            		String token = stk.nextToken().trim();
+		            		VM tempvm = new VM();
+		            		tempvm.ip = token;
+		            		tempvm.name = token;
+		            		tempvm.groupname = g.name;
+		            		g.vmlist.add(tempvm);
+		            		numvms++;
+		            	}
+		            	grouplist.add(g);
+		            	numgroups++;
+	            	}
+	            	else
+	            	{
+	            		grouplist.add(g);
+	                	numgroups++;
+	                	g = new SecGroup();
+	                	g.name = line.trim();
+	                	grouplist.add(g);
+	                	numgroups++;
 	            	}
             	}
-            	
-            	grouplist.add(g);
-            	numgroups++;
             }
         }
     	

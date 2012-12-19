@@ -1,1 +1,0 @@
-{"task":"MoveInstance","groupTo":"Trash","dns":"ec2-54-242-167-157.compute-1.amazonaws.com"}

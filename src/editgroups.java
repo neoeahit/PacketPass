@@ -99,7 +99,7 @@ public class editgroups extends HttpServlet {
             		
             		//System.out.println("Token found:"+token);
             		
-            		if( token.contains("ftp") || token.contains("ftp") )
+            		if( token.contains("tcp") || token.contains("TCP") )
             				{
             					gr.ftp = ( token.contains(":Y") || token.contains(":y") ) ?'Y':'N';
             				}

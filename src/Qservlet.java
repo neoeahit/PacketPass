@@ -79,15 +79,15 @@ public class Qservlet extends HttpServlet {
 			
 			String content;
 			
-			if(!targetgroup.equals("Trash"))
+			if(targetgroup.equals("Trash"))
 			{
-				content = new String("{" + "\"task\":\"delete\",\"dns\":\""+vmname+"\""+"}");
+				content = new String("{" + "\"task\":\"delete\",\"dns\":\""+vmname.trim()+"\""+"}");
 			
 				System.out.println("Content being pushed:\n"+content);
 			}
 			else
 			{
-				content = new String("{" + "\"task\":\"delete\",\"dns\":\""+vmname+"\""+"}");
+				content = new String("{" + "\"task\":\"MoveInstance\",\"groupTo\":\""+targetgroup.trim()+"\",\"dns\":\""+vmname.trim()+"\""+"}");
 				
 				System.out.println("Content being pushed:\n"+content);
 			}
@@ -103,7 +103,9 @@ public class Qservlet extends HttpServlet {
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(content);
 			bw.close();
- 
+			
+			shellclass.execShellCmd();
+			
 			System.out.println("Done");
  
 		} catch (IOException e) {

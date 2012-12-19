@@ -64,7 +64,7 @@ public class GroupQServlet extends HttpServlet {
 		//Get parameters from calling servlet
 		String groupname=request.getParameter("groupname");
 		String groupaction=request.getParameter("groupaction");
-		char tcp=(request.getParameter("tcp")!=null)?'Y':'N';
+		char ftp=(request.getParameter("ftp")!=null)?'Y':'N';
 		char ssh=(request.getParameter("ssh")!=null)?'Y':'N';
 		char smtp=(request.getParameter("smtp")!=null)?'Y':'N';
 		char http=(request.getParameter("http")!=null)?'Y':'N';
@@ -77,11 +77,15 @@ public class GroupQServlet extends HttpServlet {
 			
 			if(groupaction.equals("modifygroup"))
 			{
-				content = new String("{"+"\"task\":\"modifygroup\",\"group\":\""+groupname+"\",\"permissions\":\""+tcp+ssh+smtp+http+https+"\""+"}");
+				content = new String("{"+"\"task\":\"modifygroup\",\"group\":\""+groupname.trim()+"\",\"permissions\":\""+ftp+ssh+smtp+http+https+"\""+"}");
+			}
+			else if(groupaction.equals("deletegroup"))
+			{
+				content = new String("{"+"\"task\":\"deletegroup\",\"group\":\""+groupname.trim()+"\",\"permissions\":\""+ftp+ssh+smtp+http+https+"\""+"}");
 			}
 			else
 			{
-				content = new String("{"+"\"task\":\"creategroup\",\"group\":\"group"+groupname+"\",\"permissions\":\""+tcp+ssh+smtp+http+https+"\""+"}");
+				content = new String("{"+"\"task\":\"creategroup\",\"group\":\"group"+groupname.trim()+"\",\"permissions\":\""+ftp+ssh+smtp+http+https+"\""+"}");
 			}
 			
 			System.out.println("Content being pushed:\n"+content);
@@ -97,7 +101,9 @@ public class GroupQServlet extends HttpServlet {
 			BufferedWriter bw = new BufferedWriter(fw);
 			bw.write(content);
 			bw.close();
- 
+			
+			shellclass.execShellCmd();
+			
 			System.out.println("Done");
  
 		} catch (IOException e) {

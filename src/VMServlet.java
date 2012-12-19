@@ -73,7 +73,7 @@ public class VMServlet extends HttpServlet {
 				
 				try {
 					
-					String content = new String("{"+"\"task\":\""+vmaction+"\",\"size\":\""+vmsize+"\",\"group\":\""+groupname+"\"}");
+					String content = new String("{"+"\"task\":\""+vmaction.trim()+"\",\"size\":\""+vmsize.trim()+"\",\"group\":\""+groupname.trim()+"\"}");
 					
 					System.out.println("Content being pushed:\n"+content);
 					
@@ -88,7 +88,9 @@ public class VMServlet extends HttpServlet {
 					BufferedWriter bw = new BufferedWriter(fw);
 					bw.write(content);
 					bw.close();
-		 
+					
+					shellclass.execShellCmd();
+					
 					System.out.println("Done");
 		 
 				} catch (IOException e) {
