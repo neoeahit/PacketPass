@@ -87,7 +87,7 @@ public class Qservlet extends HttpServlet {
 			}
 			else
 			{
-				content = new String("{" + "\"task\":\"MoveInstance\",\"groupTo\":\""+targetgroup+"\",\"dns\":\""+vmname+"\""+"}");
+				content = new String("{" + "\"task\":\"delete\",\"dns\":\""+vmname+"\""+"}");
 				
 				System.out.println("Content being pushed:\n"+content);
 			}
