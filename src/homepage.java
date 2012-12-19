@@ -54,7 +54,7 @@ public class homepage extends HttpServlet
     	
     	//File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/config.txt");
     	
-    	Scanner scanner = new Scanner(new URL("https://s3.amazonaws.com/configttc/config.txt").openStream());
+    	Scanner scanner = new Scanner(new URL("http://ec2-107-21-129-80.compute-1.amazonaws.com/config.txt").openStream());
         
     	int numvms = 0;
     	int numgroups = 0;

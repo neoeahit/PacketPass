@@ -74,7 +74,7 @@ public class editgroups extends HttpServlet {
 		gr.name = groupname;
 		
 		//File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/groupsettings.txt");
-    	Scanner scanner = new Scanner(new URL("https://s3.amazonaws.com/configttc/groupsettings.txt").openStream());
+    	Scanner scanner = new Scanner(new URL("http://ec2-107-21-129-80.compute-1.amazonaws.com/groupsettings.txt").openStream());
     	
     	while ( scanner.hasNextLine() )
         {
