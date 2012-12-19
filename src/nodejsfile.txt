@@ -1,1 +1,1 @@
-{"task":"create","size":"Micro","group":"groupA"}
+{"task":"MoveInstance","groupTo":"Trash","dns":"addr5"}

@@ -68,19 +68,22 @@ public class homepage extends HttpServlet
             	SecGroup g = new SecGroup();
             	g.name = line.trim();
             	
-            	line = scanner.nextLine();
-            	
-            	//add vm's to last group
-            	StringTokenizer stk = new StringTokenizer(line, ";");
-            	while(stk.hasMoreTokens())
-            	{
-            		String token = stk.nextToken().trim();
-            		VM tempvm = new VM();
-            		tempvm.ip = token;
-            		tempvm.name = token;
-            		tempvm.groupname = g.name;
-            		g.vmlist.add(tempvm);
-            		numvms++;
+            	if(scanner.hasNext())
+            	{	
+	            	line = scanner.nextLine();
+	            	
+	            	//add vm's to last group
+	            	StringTokenizer stk = new StringTokenizer(line, ";");
+	            	while(stk.hasMoreTokens())
+	            	{
+	            		String token = stk.nextToken().trim();
+	            		VM tempvm = new VM();
+	            		tempvm.ip = token;
+	            		tempvm.name = token;
+	            		tempvm.groupname = g.name;
+	            		g.vmlist.add(tempvm);
+	            		numvms++;
+	            	}
             	}
             	
             	grouplist.add(g);
@@ -118,7 +121,7 @@ public class homepage extends HttpServlet
     	}
     	for(int i=1;i<=numvms;i++)
     	{
-    		out.println("\n#draggable"+i+" { width: 30px; height: 50px; padding: 0.5em; float: left; margin: 20px 20px 20px 0; }");
+    		out.println("\n#draggable"+i+" { width: 120px; height: 50px; padding: 0.5em; float: left; margin: 20px 20px 20px 0; }");
     	}
     	out.println("\n</style>");
     	out.println("\n<script>");
@@ -159,6 +162,13 @@ public class homepage extends HttpServlet
     		i++;
     	}
     	
+    	//Trash Droppable
+    	out.println("\n$( \"#droppable"+i+"\" ).droppable({" + 
+				"\ndrop: function( event, ui ) {" + 
+				"\nplacement(\""+"Trash"+"\");" + 
+				"\n}" + 
+				"\n});");
+    	
     	out.println("\n});");
     	
     	out.println("\n</script>" + 
@@ -181,6 +191,9 @@ public class homepage extends HttpServlet
 //    			"</li>" +
     			"</ul></div></div></div></div>" );
 			
+    	out.println("<div class=\"addgroupbutton\" style=\"text-align: right;\">");
+    	
+    	out.println("<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"./addgroup\" class = \"btn btn-mini btn-info\">Add New Group</a><br><br></div>");
     	
     	i =1;
     	int j=1;
@@ -189,25 +202,27 @@ public class homepage extends HttpServlet
     		//display group
     		
     		out.println("\n<div id=\"droppable"+j+"\" class=\"ui-widget-header\">" + 
-    					"\n<p><a href=\"./editgroups?groupname="+group.name+"\">" + "<button type=\"button\" class = \"btn btn-primary\">" +group.name + "</button></p>" + 
+    					"\n<p><a href=\"./editgroups?groupname="+group.name+"\">" + "<button type=\"button\" class = \"btn btn-primary\">" +group.name + "</button></a></p>" + 
     					"\n</div>");
     		
     		for(VM vmac:group.vmlist)
     		{
     			//display VM
-    			out.println("\n<div id=\"draggable"+i+"\" class=\"ui-widget-content\" onMouseDown=\"setHidden('"+vmac.name+"');\">" + 
+    			out.println("\n<div id=\"draggable"+i+"\" class=\"ui-widget-content\" onMouseDown=\"setHidden('"+vmac.name+"');\" style=\"background-image:url('http://www.clipartsfree.net/vector/small/1313181674_Clipart_Free.png');background-size:contain;background-repeat:no-repeat;\">" + 
     						"\n<p>"+vmac.name+"</p>" + 
     						"\n</div>");
     			i++;
     		}
-    		
+    	
     		out.println("\n<br><br><br><br><br><br><br><br><br>");
     		j++;
     	}
     	
-    	out.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"./addgroup\" class = \"btn btn-info\">Add New Group</a>" +
-    				
-    				"\n</body></html>");
+    	out.println("\n<div id=\"droppable"+j+"\" class=\"ui-widget-header\" style=\"text-align: center;\">" + 
+				"\n<p><tab align=center><button type=\"button\" class = \"btn btn-danger\">" +"Trash"+ "</button></p>" + 
+				"\n</div>");
+    	
+    	out.println("\n</body></html>");
     }
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
