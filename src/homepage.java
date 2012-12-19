@@ -26,6 +26,7 @@ public class homepage extends HttpServlet
 	{
 		String name;
 		String ip;
+		String groupname;
 	}
 	
 	private static final long serialVersionUID = 1L;
@@ -77,6 +78,7 @@ public class homepage extends HttpServlet
             		VM tempvm = new VM();
             		tempvm.ip = token;
             		tempvm.name = token;
+            		tempvm.groupname = g.name;
             		g.vmlist.add(tempvm);
             		numvms++;
             	}
@@ -134,6 +136,7 @@ public class homepage extends HttpServlet
     				"\nreturn true;" +
     			"\n}");
     	
+    	//TO-DO: Pass source zone also, it's stored as vm.groupname
     	out.println("function loadSQS(vm, zone)" + 
     				"{" +  
     				"document.location.href = \"Qservlet?vmname=\"+vm+\"&zone=\"+zone;" +  

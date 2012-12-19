@@ -67,7 +67,7 @@ public class Qservlet extends HttpServlet {
 		
 		//Get parameters from calling servlet
 		String vmname=request.getParameter("vmname");
-		String zone=request.getParameter("zone");
+		String targetgroup=request.getParameter("zone");
 		
 		// response.setContentType("text/html;charset=UTF-8");
 		//PrintWriter out = response.getWriter();
@@ -77,9 +77,11 @@ public class Qservlet extends HttpServlet {
 		//instead we are writing it to the file and nodejs will take of it
 		try {
 			 
-			String content = vmname+" "+zone;
- 
-			File file = new File("/home/vipul/Downloads/PacketPass/src/nodejsfile.txt");
+			String content = "MoveInstance" + vmname + " " + targetgroup;
+			
+			System.out.println("Content being pushed:\n"+content);
+			
+			File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/nodejsfile.txt");
  
 			// if file doesnt exists, then create it
 			if (!file.exists()) {
