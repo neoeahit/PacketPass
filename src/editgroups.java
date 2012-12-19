@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -72,8 +73,8 @@ public class editgroups extends HttpServlet {
 		
 		gr.name = groupname;
 		
-		File file = new File("/home/vipul/Downloads/PacketPass/src/groupsettings.txt");
-    	Scanner scanner = new Scanner(file);
+		//File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/groupsettings.txt");
+    	Scanner scanner = new Scanner(new URL("https://s3.amazonaws.com/configttc/groupsettings.txt").openStream());
     	
     	while ( scanner.hasNextLine() )
         {
@@ -96,7 +97,7 @@ public class editgroups extends HttpServlet {
             			allowed = true;
             		}
             		
-            		System.out.println("Token found:"+token);
+            		//System.out.println("Token found:"+token);
             		
             		if( token.contains("TCP") || token.contains("tcp") )
             				{
@@ -120,7 +121,7 @@ public class editgroups extends HttpServlet {
     				}
             	}
             	
-            	System.out.println("Group Permissions:" + gr.tcp + "\t" + gr.ssh + "\t" + gr.smtp + "\t" + gr.http + "\t" + gr.https);
+            	//System.out.println("Group Permissions:" + gr.tcp + "\t" + gr.ssh + "\t" + gr.smtp + "\t" + gr.http + "\t" + gr.https);
             }
         }
     	

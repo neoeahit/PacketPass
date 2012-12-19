@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -15,8 +16,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class homepage extends HttpServlet
 {
-	String sourcepath = "/home/vipul/Downloads/PacketPass/src";
-    
 	public class SecGroup
 	{
 		String name;
@@ -52,8 +51,9 @@ public class homepage extends HttpServlet
     	
     	ArrayList<SecGroup> grouplist = new ArrayList<SecGroup>();
     	
-    	File file = new File("/home/vipul/Downloads/PacketPass/src/config.txt");
-    	Scanner scanner = new Scanner(file);
+    	//File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/config.txt");
+    	
+    	Scanner scanner = new Scanner(new URL("https://s3.amazonaws.com/configttc/config.txt").openStream());
         
     	int numvms = 0;
     	int numgroups = 0;

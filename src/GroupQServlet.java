@@ -77,7 +77,7 @@ public class GroupQServlet extends HttpServlet {
 			
 			System.out.println("Content being pushed:\n"+content);
 			
-			File file = new File("/home/vipul/Downloads/PacketPass/src/nodejsfile.txt");
+			File file = new File("/Users/abhas/Documents/workspace/PacketPass/src/nodejsfile.txt");
  
 			// if file doesnt exists, then create it
 			if (!file.exists()) {
