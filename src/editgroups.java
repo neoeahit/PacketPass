@@ -99,9 +99,9 @@ public class editgroups extends HttpServlet {
             		
             		//System.out.println("Token found:"+token);
             		
-            		if( token.contains("TCP") || token.contains("tcp") )
+            		if( token.contains("ftp") || token.contains("ftp") )
             				{
-            					gr.tcp = ( token.contains(":Y") || token.contains(":y") ) ?'Y':'N';
+            					gr.ftp = ( token.contains(":Y") || token.contains(":y") ) ?'Y':'N';
             				}
             		else if( token.contains("SSH") || token.contains("ssh") )
     				{
@@ -121,7 +121,7 @@ public class editgroups extends HttpServlet {
     				}
             	}
             	
-            	//System.out.println("Group Permissions:" + gr.tcp + "\t" + gr.ssh + "\t" + gr.smtp + "\t" + gr.http + "\t" + gr.https);
+            	//System.out.println("Group Permissions:" + gr.ftp + "\t" + gr.ssh + "\t" + gr.smtp + "\t" + gr.http + "\t" + gr.https);
             }
         }
     	
@@ -171,13 +171,13 @@ public class editgroups extends HttpServlet {
     	
     out.println(
     		"<table align=center><form action=\"GroupQServlet\" method=\"get\">");
-    	if(gr.tcp=='N')
+    	if(gr.ftp=='N')
     	{
-    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"tcp\" value=\"Y\">tcp</td><td></td></tr>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"ftp\" value=\"Y\">ftp</td><td></td></tr>");
     	}
     	else
     	{
-    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"tcp\" value=\"Y\" checked>tcp</td><td></td></tr>");
+    		out.println("<tr><td></td><td><input type=\"checkbox\" name=\"ftp\" value=\"Y\" checked>ftp</td><td></td></tr>");
     	}
     	if(gr.ssh=='N')
     	{
@@ -224,7 +224,7 @@ public class editgroups extends HttpServlet {
     	    			"<input type=\"submit\" value=\"Delete Group\"></form></td>");
     	    
     	    out.println(
-    	    		"<td><br><form action=\"VMServlet\" method=\"get\">" +
+    	    		"<td><br><form action=\"addvm\" method=\"get\">" +
     	    			"<input type=\"hidden\" name=\"groupaction\" value=\"addvm\">" +
     	        		"<input type=\"hidden\" name=\"groupname\" value=\"" + gr.name + "\">" +
     	    			"<input type=\"submit\" value=\"Add new VM to group\"></form></td></tr></table>");

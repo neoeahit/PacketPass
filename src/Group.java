@@ -3,7 +3,7 @@ public class Group {
 	
 	String name = new String("New Group");
 	
-	char tcp = 'Y';
+	char ftp = 'Y';
 	
 	char ssh = 'Y';
 	

@@ -76,8 +76,8 @@ public class Qservlet extends HttpServlet {
 		
 		//instead we are writing it to the file and nodejs will take of it
 		try {
-			 
-			String content = "MoveInstance" + vmname + " " + targetgroup;
+			
+			String content = new String("{" + "\"task\":\"MoveInstance\",\"groupTo\":\""+targetgroup+"\",\"dns\":\""+vmname+"\""+"}");
 			
 			System.out.println("Content being pushed:\n"+content);
 			

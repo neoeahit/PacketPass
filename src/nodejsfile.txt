@@ -1,1 +1,1 @@
-deletegroup groupC N N N N N
+{"task":"AddInstance","Size":"Micro","group":"groupA"}

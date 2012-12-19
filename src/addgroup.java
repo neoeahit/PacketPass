@@ -115,7 +115,7 @@ public class addgroup extends HttpServlet {
 			"Group Name:	<input type=\"text\" name=\"groupname\"><br><br>"
     		);
     	
-    	out.println("<input type=\"checkbox\" name=\"tcp\" value=\"Y\" checked>tcp<br>");
+    	out.println("<input type=\"checkbox\" name=\"ftp\" value=\"Y\" checked>ftp<br>");
     	
     	out.println("<input type=\"checkbox\" name=\"ssh\" value=\"Y\" checked>ssh<br>");
     	

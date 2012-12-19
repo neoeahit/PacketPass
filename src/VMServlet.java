@@ -67,10 +67,13 @@ public class VMServlet extends HttpServlet {
 		
 				//Get parameters from calling servlet
 				String groupname=request.getParameter("groupname");
-				String groupaction = request.getParameter("groupaction");
+				String cloudprovider = request.getParameter("cloudprovider");
+				String vmaction = request.getParameter("vmaction");
+				String vmsize = request.getParameter("vmsize");
+				
 				try {
 					
-					String content = groupaction+" " +groupname;
+					String content = new String("{"+"\"task\":\""+vmaction+"\",\"Size\":\""+vmsize+"\",\"group\":\""+groupname+"\"}");
 					
 					System.out.println("Content being pushed:\n"+content);
 					

@@ -1,1 +1,1 @@
-addvm groupA
+{"task":"AddInstance","Size":"Micro","group":"groupA"}

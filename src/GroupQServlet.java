@@ -73,7 +73,16 @@ public class GroupQServlet extends HttpServlet {
 		try {
 			
 			//groupaction can be creategroup or modifygroup
-			String content = groupaction+" " +groupname+" "+tcp+" "+ssh+" "+smtp+" "+http+" "+https;
+			String content = null;
+			
+			if(groupaction.equals("modifygroup"))
+			{
+				content = new String("{"+"\"task\":\"modifygroup\",\"group\":\""+groupname+"\",\"permissions\":\""+tcp+ssh+smtp+http+https+"\""+"}");
+			}
+			else
+			{
+				content = new String("{"+"\"task\":\"creategroup\",\"group\":\"group"+groupname+"\",\"permissions\":\""+tcp+ssh+smtp+http+https+"\""+"}");
+			}
 			
 			System.out.println("Content being pushed:\n"+content);
 			

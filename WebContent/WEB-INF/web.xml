@@ -79,4 +79,14 @@
     <servlet-name>VMServlet</servlet-name>
     <url-pattern>/VMServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addvm</display-name>
+    <servlet-name>addvm</servlet-name>
+    <servlet-class>addvm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addvm</servlet-name>
+    <url-pattern>/addvm</url-pattern>
+  </servlet-mapping>
 </web-app>
